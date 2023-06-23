@@ -12,6 +12,8 @@ export default function Home() {
   const { user } = useAuth() as any;
   const router = useRouter();
   useEffect(() => {
+    console.log('last check');
+    
     if(user) {
       if(user.roles.some((role: {name: string}) => role.name === ROLES.ADMIN)) {
         router.push(ROUTE_ADMIN);
